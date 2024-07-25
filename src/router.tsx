@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"
 import { Layout } from "./layouts";
-import { NewProduct, Products } from "./views";
+import { NewProduct, Products, action as newProductAction } from "./views";
 
 
 export const router = createBrowserRouter([
@@ -16,9 +16,9 @@ export const router = createBrowserRouter([
       },             // to render this element in the index ('/')
       {
         path: '/products/new',
-        element: <NewProduct/>
+        element: <NewProduct/>,
+        action: newProductAction,
       }
     ]
   },
-
 ]);
