@@ -88,6 +88,15 @@ export const updateProduct = async (data: ProductData, id: Product["id"]) => {
   }
 };
 
+export const updateProductAvailability = async (id: Product["id"]) => {
+  try {
+    const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`;
+    const { data } = await axios.patch(url);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const deleteProduct = async (id: Product["id"]) => {
   try {
     const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`;
